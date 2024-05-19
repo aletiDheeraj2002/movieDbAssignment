@@ -1,70 +1,115 @@
-# Getting Started with Create React App
+# Title
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+    MovieDb Assignment
 
-## Available Scripts
+## Objective
 
-In the project directory, you can run:
+    Create a web panel consisting of four different pages and a global search in the Navbar.
+    Home Page / Popular Movie Page
+    Top Rated Page
+    Upcoming Movie Page
+    Single Movie Detail Page
+    Searched Movie Page (UI will be same as Home Page)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Tech Stack
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+    React.js,javascript,html,css
 
-### `npm test`
+## Completion Instructions
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Functionality
 
-### `npm run build`
+#### Must Have
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    Create a web panel consisting of four different pages and a global search in the Navbar.
+    Home Page / Popular Movie Page
+    Top Rated Page
+    Upcoming Movie Page
+    Single Movie Detail Page
+    Searched Movie Page (UI will be same as Home Page)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### Nice to Have
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    The project must be responsive with decent CSS.
+    It is not necessary that the colors should match the images above. Use your imagination and try to make it as you like.
+    Pagination is required.
+    Make sure the components are reusable wherever possible.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Guidelines to develop a project
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Must Have
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    Create a web panel consisting of four different pages and a global search in the Navbar.
+    Home Page / Popular Movie Page
+    Top Rated Page
+    Upcoming Movie Page
+    Single Movie Detail Page
+    Searched Movie Page (UI will be same as Home Page)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+#### Nice to Have
 
-## Learn More
+    The project must be responsive with decent CSS.
+    It is not necessary that the colors should match the images above. Use your imagination and try to make it as you like.
+    Pagination is required.
+    Make sure the components are reusable wherever possible.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Submission Instructions
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### Must Have
 
-### Code Splitting
+    Upload the project on Codesandbox (https://codesandbox.io/) and submit it using the code sandbox link. This is mandatory, without this, the submission will not be accepted.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+   
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Resources
 
-### Making a Progressive Web App
+### Design files
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+    For every page details ,visit https://drive.google.com/file/d/1iVxnaKNqmDTykCg7IvR97j8p6QgTlJdl/view?usp=sharing.
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### APIs
 
-### Deployment
+   
+    Generate your own api key by visiting
+    https://www.themoviedb.org/settings/api
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+    Get all movies
+    https://api.themoviedb.org/3/movie/popular?api_key=${Api_key}&language=en-US&page=1
 
-### `npm run build` fails to minify
+    For Image Path: You need to add a base domain which is given below
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    https://image.tmdb.org/t/p/w500
+
+    Eg: For your Reference
+
+    https://image.tmdb.org/t/p/w500/bcCBq9N1EMo3daNIjWJ8kYvrQm6.jpgbcCBq9N1EMo3daNIjWJ8kYvrQm6.jpg
+
+
+    From API Get movie detail
+
+    https://api.themoviedb.org/3/movie/${movie_id}?api_key=${Api_key}&language=en-US
+
+
+    Get movie cast detail
+
+    https://api.themoviedb.org/3/movie/${movie_id}/credits?api_key=${Api_key}&language=en-US
+
+    Get upcoming movies
+
+    https://api.themoviedb.org/3/movie/upcoming?api_key=${Api_key}&language=en-US&page=1
+
+    Get top-rated movies
+
+    https://api.themoviedb.org/3/movie/top_rated?api_key=${Api_key}&language=en-US&page=1
+
+    Get search result
+
+    https://api.themoviedb.org/3/search/movie?api\_key=${Api\_key}&language=en-US&query=${movie\_name}&page=1
+
+
+
+
