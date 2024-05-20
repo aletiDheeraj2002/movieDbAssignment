@@ -11,8 +11,8 @@ const MovieList = ({ movies }) => {
             src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
             alt={movie.title}
           />
-          <h2>{movie.title}</h2>
-          <p>{movie.overview}</p>
+          <h2 className="movie-details-heading">{movie.title}</h2>
+          <h3 className="movie-details-para">Voting: {movie.vote_average}</h3>
         </Link>
       ))}
     </div>

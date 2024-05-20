@@ -36,8 +36,9 @@ class TopRatedPage extends Component {
 
     return (
       <div className="top-rated-page">
-        <h1>Top Rated Movies</h1>
+        
         <MovieList movies={movies} />
+        <div className="pagination-cont">
         <div className="pagination">
           <button
             onClick={() => this.handlePageChange(currentPage - 1)}
@@ -45,15 +46,19 @@ class TopRatedPage extends Component {
           >
             Previous
           </button>
+          
           <span>
             Page {currentPage} of {totalPages}
           </span>
+
           <button
             onClick={() => this.handlePageChange(currentPage + 1)}
             disabled={currentPage === totalPages}
           >
             Next
           </button>
+
+        </div>
         </div>
       </div>
     );

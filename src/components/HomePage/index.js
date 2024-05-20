@@ -3,6 +3,10 @@ import MovieList from '../MovieList';
 
 import './index.css'
 
+const Loader = () => (
+    <div className="loader"></div>
+  );
+
 class Home extends Component {
   constructor(props) {
     super(props);
@@ -10,6 +14,10 @@ class Home extends Component {
       movies: [],
       page: 1,
       query: '',
+      currentPage: 1,
+    totalPages: 1,
+    searchQuery: '',
+    loading: false,
     };
   }
 
@@ -34,58 +42,76 @@ class Home extends Component {
       apiEndpoint = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=${page}`;
     }
 
+    this.setState({ loading: true });
+
     try {
       const response = await fetch(apiEndpoint);
       const data = await response.json();
-      this.setState({ movies: data.results });
+      this.setState({ movies: data.results,totalPages: data.total_pages },()=>{
+        this.setState({ loading: false })
+      });
     } catch (error) {
       console.error('Error fetching movies:', error);
     }
   }
 
-  handlePreviousPage = () => {
-    this.setState((prevState) => ({ page: prevState.page - 1 }));
-  }
+  handlePageChange = (page) => {
+    this.setState({ currentPage: page,page:page });
+  };
 
-  handleNextPage = () => {
-    this.setState((prevState) => ({ page: prevState.page + 1 }));
-  }
 
   handleInputChange = (event) => {
-    this.setState({ query: event.target.value });
+    this.setState({ searchQuery: event.target.value });
   }
 
   handleSearch = () => {
-    // Optionally, you can add additional logic here such as clearing previous search results
-    // or resetting pagination when the search button is clicked.
-    // For now, we'll let the search trigger the componentDidUpdate to fetch new results.
+    this.setState({ query: this.state.searchQuery, page: 1, currentPage: 1 }, () => {
+      this.fetchMovies();
+    });
   }
-
   render() {
-    const { movies, page, query } = this.state;
+    const { movies, searchQuery ,currentPage,
+        totalPages,loading} = this.state;
 
     return (
       <div className="container">
        
-        <h1 className="title">{query ? `Search Results for "${query}"` : 'Popular Movies'}</h1>
+       
         <div className="search-container">
           <input
             type="text"
             placeholder="Search movies..."
-            value={query}
+            value={searchQuery}
             onChange={this.handleInputChange}
           />
           <button onClick={this.handleSearch}>Search</button>
         </div>
-        <MovieList movies={movies} />
+        {loading ? <Loader /> : <MovieList movies={movies} />}
+        
+       
+        <div className="pagination-cont">
         <div className="pagination">
-          <button onClick={this.handlePreviousPage} disabled={page === 1}>
+          <button
+            onClick={() => this.handlePageChange(currentPage - 1)}
+            disabled={currentPage === 1}
+          >
             Previous
           </button>
-          <button onClick={this.handleNextPage}>
+          
+          <span>
+            Page {currentPage} of {totalPages}
+          </span>
+
+          <button
+            onClick={() => this.handlePageChange(currentPage + 1)}
+            disabled={currentPage === totalPages}
+          >
             Next
           </button>
+
         </div>
+        </div>
+        
       </div>
     );
   }

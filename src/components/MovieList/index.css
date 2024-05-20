@@ -1,3 +1,21 @@
+.movie-details-heading{
+    color : #ffffff;
+    text-align: left;
+    padding-left: 20px;
+
+}
+
+*{
+    box-sizing: border-box;
+  }
+
+.movie-details-para{
+    color: #ffffff;
+    text-align: left;
+    padding-left: 20px;
+    font-size: 14px;
+    font-weight: normal;
+}
 
 .movies-list {
     display: flex;
@@ -9,13 +27,14 @@
   
   .movie-card {
     text-decoration: none; /* Remove default underline */
-    background-color: #f0f0f0;
+    background-color: #33393F;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     width: 200px;
     text-align: center;
     transition: transform 0.3s;
+
   }
   
   .movie-card:hover {
@@ -25,7 +44,7 @@
   .movie-card img {
     width: 100%;
     height: auto;
-    border-bottom: 1px solid #ccc;
+    
   }
   
   .movie-card h2 {
