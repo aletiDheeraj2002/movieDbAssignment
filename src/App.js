@@ -5,14 +5,14 @@ import HomePage from './components/HomePage';
 import TopRatedPage from './components/TopRatedPage';
 import UpcomingPage from './components/UpcomingPage';
 import MovieDetailPage from './components/MovieDetailPage';
-
+import Navbar from './components/Navbar';
 
 function App() {
   return (
     <div className="App">
       
       < BrowserRouter >
-      
+      <Navbar />
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/top-rated" component={TopRatedPage} />

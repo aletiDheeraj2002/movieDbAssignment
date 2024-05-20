@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import MovieList from '../MovieList';
-import Navbar from '../Navbar';
+
 import './index.css'
 
 class Home extends Component {
@@ -66,7 +66,7 @@ class Home extends Component {
 
     return (
       <div className="container">
-        <Navbar />
+       
         <h1 className="title">{query ? `Search Results for "${query}"` : 'Popular Movies'}</h1>
         <div className="search-container">
           <input
