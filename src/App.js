@@ -6,15 +6,19 @@ import TopRatedPage from './components/TopRatedPage';
 import UpcomingPage from './components/UpcomingPage';
 import MovieDetailPage from './components/MovieDetailPage';
 
+
 function App() {
   return (
     <div className="App">
+      
       < BrowserRouter >
+      
       <Switch>
         <Route exact path="/" component={HomePage} />
-        <Route path="/top-rated" component={TopRatedPage} />
-        <Route path="/upcoming" component={UpcomingPage} />
+        <Route exact path="/top-rated" component={TopRatedPage} />
+        <Route exact path="/upcoming" component={UpcomingPage} />
         <Route path="/movie/:id" component={MovieDetailPage} />
+        
       </Switch>
       </BrowserRouter>
     </div>
